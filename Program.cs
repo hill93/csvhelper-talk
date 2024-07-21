@@ -3,5 +3,7 @@
 using CvsHelperTalk.Demos;
 
 var foodDemo = new FoodDemo();
+var aorDemo = new AorDemo();
 
 foodDemo.Run();
+aorDemo.Run();

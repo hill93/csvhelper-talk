@@ -1,6 +1,7 @@
 ﻿using CvsHelperTalk.Csv.Entities;
 using CvsHelperTalk.Csv.Readers;
 using CvsHelperTalk.Csv.Writers;
+using CvsHelperTalk.Csv.Enum;
 
 namespace CvsHelperTalk.Demos
 {
@@ -20,7 +21,7 @@ namespace CvsHelperTalk.Demos
                 Name = "Peanut Butter",
                 Description = "One of them big tubs, very nice",
                 Price = 6.5M,
-                Unit = CvsHelperTalk.Csv.Enum.Unit.Grams,
+                Unit = Unit.Grams,
                 Quantity = 1000,
                 DateAdded = DateTime.Now,
                 InStock = true,
