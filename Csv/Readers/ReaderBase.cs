@@ -6,23 +6,9 @@ namespace CvsHelperTalk.Csv.Readers
 {
     public class ReaderBase<T>
     {
-        public List<T> Read(string path)
+        public List<T> Read(string path, CsvConfiguration configArg = null)
         {
-            var config = new CsvConfiguration(CultureInfo.InvariantCulture)
-            {
-                AllowComments = true,
-                BadDataFound = data => { Console.WriteLine("uh oh!"); },
-                BufferSize = 0,
-                Comment = '~',
-                CacheFields = false,
-                CountBytes = false,
-                DetectColumnCountChanges = false,
-                MissingFieldFound = field => { Console.WriteLine($"{field} is empty"); },
-                PrepareHeaderForMatch = header => header.Header.ToUpper(),
-                ShouldSkipRecord = record => record.Row[4].Contains("-"),
-                UseNewObjectForNullReferenceMembers = true,
-                TrimOptions = TrimOptions.Trim
-            };
+            var config = configArg ?? new(CultureInfo.InvariantCulture);
 
             config.ApplyAttributes<T>();
 

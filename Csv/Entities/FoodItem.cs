@@ -4,7 +4,6 @@ using CvsHelperTalk.Csv.TypeConverters;
 
 namespace CvsHelperTalk.Csv.Entities
 {
-    //[CultureInfo("en-GB")]
     public class FoodItem
     {
         public int Id { get; set; }
