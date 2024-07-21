@@ -1,0 +1,7 @@
+ADateField,AStringField,AnIntField,TestKey
+25/12/2024, TEST ,  99,
+
+~THIS IS A COMMENT
+SKIPTHISLINE
+21/07/2024,,,44
+21/07/2024,,

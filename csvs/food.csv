@@ -1,0 +1,4 @@
+Id,name,Description,price,units,quantity,dateAdded,inStock,nutritionalInfo
+1,Bananas,Yellow fruit,0.5,Grams,200,20/07/2023,yes,"{""energy"":371,""protein"":1.1,""carbs"":23.0,""sugar"":12.0}"
+2,Milk,Dairy product (white),0.7,Pints,1,20/04/2023,n,"{""energy"":265,""protein"":3.4,""carbs"":4.6,""sugar"":4.6}"
+3,Birra Moretti,Delicious beer,5,Millilitres,500,17/04/2023,oui,"{""energy"":157,""protein"":0.3,""carbs"":2.8,""sugar"":0.0}"
