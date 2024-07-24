@@ -4,15 +4,20 @@ using System.Globalization;
 
 namespace CvsHelperTalk.Csv.Readers
 {
+    using CsvHelper.Configuration;
+
     public class MappedItemReader
     {
         public List<MappedItem> Read()
         {
-            using (var streamReader = new StreamReader("C:\\CsvReaderTalk\\mapped.csv"))
-            using (var csvReader = new CsvReader(streamReader, CultureInfo.InvariantCulture))
+            var config = new CsvConfiguration(CultureInfo.InvariantCulture)
             {
-                csvReader.Read();
-                csvReader.ReadHeader();
+                MissingFieldFound = null
+            };
+            
+            using (var streamReader = new StreamReader("C:\\CsvReaderTalk\\mapped.csv"))
+            using (var csvReader = new CsvReader(streamReader, config))
+            {
                 csvReader.Context.RegisterClassMap<MappedItemMap>();
 
                 return csvReader.GetRecords<MappedItem>().ToList();

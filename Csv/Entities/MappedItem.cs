@@ -26,11 +26,12 @@ namespace CvsHelperTalk.Csv.Entities
         {
             var headerGroups = args.Row.HeaderRecord.GroupBy(x => x[0]).ToList();
 
-            return headerGroups.Select(x => new Person
+            return headerGroups.Take(args.Row.ColumnCount/3)
+                .Select(x => new Person
             {
-                FirstName = args.Row.GetField(x.FirstOrDefault(x => x.EndsWith("fn"))),
-                LastName = args.Row.GetField(x.FirstOrDefault(x => x.EndsWith("sn"))),
-                Age = int.Parse(args.Row.GetField(x.FirstOrDefault(x => x.EndsWith('a'))))
+                FirstName = args.Row.GetField(x.FirstOrDefault(y => y.EndsWith("fn"))),
+                LastName = args.Row.GetField(x.FirstOrDefault(y => y.EndsWith("sn"))),
+                Age = int.Parse(args.Row.GetField(x.FirstOrDefault(y => y.EndsWith('a'))))
             }).ToList();
         }
     }

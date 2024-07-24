@@ -6,7 +6,7 @@ namespace CvsHelperTalk.Csv.Readers
 {
     public class ReaderBase<T>
     {
-        public List<T> Read(string path, CsvConfiguration configArg = null)
+        public List<T> Read(string path, CsvConfiguration? configArg = null)
         {
             var config = configArg ?? new(CultureInfo.InvariantCulture);
 

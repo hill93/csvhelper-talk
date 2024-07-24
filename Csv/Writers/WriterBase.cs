@@ -6,7 +6,7 @@ namespace CvsHelperTalk.Csv.Writers
 {
     public class WriterBase<T>
     {
-        public void WriteRange(List<T> records, string path, CsvConfiguration configArg = null)
+        public void WriteRange(List<T> records, string path, CsvConfiguration? configArg = null)
         {
             var config = configArg ?? new(CultureInfo.InvariantCulture);
             config.ApplyAttributes<T>();
@@ -18,7 +18,7 @@ namespace CvsHelperTalk.Csv.Writers
             }
         }
 
-        public void AppendRange(List<T> records, string path, CsvConfiguration configArg = null)
+        public void AppendRange(List<T> records, string path, CsvConfiguration? configArg = null)
         {
             var config = configArg ?? new(CultureInfo.InvariantCulture);
 
