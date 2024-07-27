@@ -11,7 +11,7 @@ namespace CvsHelperTalk.Csv.Writers
             var config = new CsvConfiguration(CultureInfo.InvariantCulture)
             {
                 MissingFieldFound = field => { Console.WriteLine($"{field} is empty"); },
-               // PrepareHeaderForMatch = header => header.Header.Replace(" ", "")
+                PrepareHeaderForMatch = header => header.Header.Replace(" ", "")
             };
 
             base.AppendRange(items, "C:\\CsvReaderTalk\\other.csv", config);

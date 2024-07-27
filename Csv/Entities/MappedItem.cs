@@ -1,11 +1,9 @@
-﻿using CsvHelper;
-using CsvHelper.Configuration;
-
-namespace CvsHelperTalk.Csv.Entities
+﻿namespace CvsHelperTalk.Csv.Entities
 {
     public class MappedItem
     {
         public List<Person> People { get; set; }
+        public string Json { get; set; }
     }
 
     public class Person
@@ -13,26 +11,5 @@ namespace CvsHelperTalk.Csv.Entities
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public int Age { get; set; }
-    }
-
-    public class MappedItemMap : ClassMap<MappedItem>
-    {
-        public MappedItemMap()
-        {
-            Map(m => m.People).Convert(args => this.ConvertToPeople(args));
-        }
-
-        private List<Person> ConvertToPeople(ConvertFromStringArgs args)
-        {
-            var headerGroups = args.Row.HeaderRecord.GroupBy(x => x[0]).ToList();
-
-            return headerGroups.Take(args.Row.ColumnCount/3)
-                .Select(x => new Person
-            {
-                FirstName = args.Row.GetField(x.FirstOrDefault(y => y.EndsWith("fn"))),
-                LastName = args.Row.GetField(x.FirstOrDefault(y => y.EndsWith("sn"))),
-                Age = int.Parse(args.Row.GetField(x.FirstOrDefault(y => y.EndsWith('a'))))
-            }).ToList();
-        }
     }
 }

@@ -12,7 +12,10 @@ using CvsHelperTalk.Demos;
 //var otherDemo = new OtherDemo();
 //otherDemo.Run();
 
-var mappedItemReader = new MappedItemReader();
-var items = mappedItemReader.Read();
+//var mappedItemReader = new MappedItemReader();
+//var items = mappedItemReader.Read();
+
+var mappedWriterDemo = new MappedItemWriterDemo();
+mappedWriterDemo.Run();
 
 var test = "";
