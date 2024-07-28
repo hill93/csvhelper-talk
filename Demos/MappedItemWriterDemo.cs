@@ -64,6 +64,72 @@ namespace CvsHelperTalk.Demos
                             Age = 100
                         }
                     }
+                },
+                new()
+                {
+                    People = new()
+                    {
+                        new()
+                        {
+                            FirstName = "Anew",
+                            LastName = "Friend",
+                            Age = 22
+                        }
+                    }
+                },
+                new()
+                {
+                    People = new()
+                    {
+                        new()
+                        {
+                            FirstName = "Lots",
+                            LastName = "Andlots",
+                            Age = 43
+                        },
+                        new()
+                        {
+                            FirstName = "And",
+                            LastName = "Lots",
+                            Age = 60
+                        },
+                        new()
+                        {
+                            FirstName = "Andlots",
+                            LastName = "And",
+                            Age = 75
+                        },
+                        new()
+                        {
+                            FirstName = "Lots",
+                            LastName = "And",
+                            Age = 100
+                        },
+                        new()
+                        {
+                            FirstName = "Lotsandlots",
+                            LastName = "Andlots",
+                            Age = 43
+                        },
+                        new()
+                        {
+                            FirstName = "And",
+                            LastName = "Lotsand",
+                            Age = 60
+                        },
+                        new()
+                        {
+                            FirstName = "Lots",
+                            LastName = "Of",
+                            Age = 75
+                        },
+                        new()
+                        {
+                            FirstName = "New",
+                            LastName = "Peeps",
+                            Age = 100
+                        }
+                    }
                 }
             };
 

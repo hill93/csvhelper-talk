@@ -15,7 +15,7 @@ namespace CvsHelperTalk.Csv.Writers
             using (var writer = new StreamWriter("C:\\CsvReaderTalk\\mapped-output.csv"))
             using (var csvWriter = new CsvWriter(writer, config))
             {
-                csvWriter.Context.RegisterClassMap<MappedItemWriterMap>();
+                csvWriter.Context.RegisterClassMap(new MappedItemWriterMap(records));
 
                 csvWriter.WriteRecords(records);
             }
@@ -31,7 +31,7 @@ namespace CvsHelperTalk.Csv.Writers
             using (var writer = new StreamWriter(stream))
             using (var csvWriter = new CsvWriter(writer, config))
             {
-                csvWriter.Context.RegisterClassMap<MappedItemWriterMap>();
+                csvWriter.Context.RegisterClassMap(new MappedItemWriterMap(records));
 
                 csvWriter.WriteRecords(records);
             }
